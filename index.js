@@ -5,9 +5,6 @@
 function Date2(options){
   if(!(this instanceof Date2))
     return new Date2(options);
-    
-  if(options instanceof Date)
-    this.date = options;
   
   switch (typeof options) {
     case 'number':
@@ -17,7 +14,11 @@ function Date2(options){
       this.date = this.parse(options);
       break;
     case 'object':
-      this.date = this.create(options);
+      if(options instanceof Date){
+        this.date = options;
+      }else{
+        this.date = this.create(options);
+      }
       break;
     default:
       this.date = new Date(options || null);
@@ -26,6 +27,20 @@ function Date2(options){
       
 };
 
+/**
+ * [now description]
+ * @return {[type]} [description]
+ */
+Date2.prototype.now = function(){
+  return this.date.now();
+};
+
+/**
+ * [parse description]
+ * @param  {[type]} str     [description]
+ * @param  {[type]} options [description]
+ * @return {[type]}         [description]
+ */
 Date2.prototype.parse = function(str, options){
   var obj = {}, map = {
     fullYear: 1,
@@ -43,7 +58,11 @@ Date2.prototype.parse = function(str, options){
   }
   return this.create(obj);
 };
-
+/**
+ * [create description]
+ * @param  {[type]} options [description]
+ * @return {[type]}         [description]
+ */
 Date2.prototype.create = function(options){
   var year  = +options.year  ,
       month = +options.month - 1,
