@@ -1,6 +1,6 @@
 {
   "name": "date2.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
@@ -18,7 +18,7 @@
     "url": "https://github.com/song940/date2/issues"
   },
   "homepage": "https://github.com/song940/date2#readme",
-  "description": "new Date2()",
+  "description": "new Date2();",
   "directories": {
     "test": "test"
   }

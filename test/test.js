@@ -47,4 +47,14 @@ describe('Date2 test case', function(){
     assert.equal('2016/10/11', date2.toString('yyyy/MM/dd'));
   })
 
+  it('new Date2().now()', function(){
+    var date2 = new Date2(date);
+    assert.equal(+date, date2.now());
+  })
+
+  it('timeago', function(){
+    var date2 = new Date2(date);
+    assert.equal('8 days ago', date2.ago());
+  })
+
 });
