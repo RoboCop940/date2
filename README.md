@@ -13,6 +13,27 @@ const Date2 = require('date2.js');
 var date = new Date2();
 
 date.toString('yyyy-MM-dd HH:mm:ss');
+
+or
+
+import Date2 from 'date2.js'
+
+let date = new Date2(new Date());
+date.toString('yyyy-MM-dd HH:mm:ss'); // 2019-04-12 19:42:11
+date.now() // new 时候传入日期的 时间戳 。默认0
+date.ago() // 49 years ago
+date.parse('2015-10-01 12:10:00') // Thu Oct 01 2015 12:10:00 GMT+0800 (中国标准时间)
+date.create({
+  date: "01",
+  fullYear: "2015-10-01",
+  hour: "12",
+  minute: "10",
+  month: "10",
+  second: "00",
+  time: "12:10:00",
+  year: "2015"
+}) //Thu Oct 01 2015 12:10:00 GMT+0800 (中国标准时间)
+
 ```
 
 ### API
